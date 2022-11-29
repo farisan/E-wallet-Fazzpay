@@ -245,7 +245,7 @@ function Confirmation() {
                     </p>
                     <div className={styles.pin}>
                       <ReactCodeInput
-                        type="number"
+                        type="password"
                         fields={6}
                         pattern="/^-?\d+\.?\d*$/"
                         onChange={valuePin}
