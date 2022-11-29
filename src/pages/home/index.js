@@ -7,21 +7,11 @@ import styles from "../../styles/Rumah.module.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Sidebar from "../../components/sidebar/Sidebar";
-import CardTransaction from "../../components/CardTransaction/index";
+import CardTransaction from "../../components/CardTransaction/Index";
 
 //import image
 import Image from "next/image";
-import icon_grid from "../../assets/dashboard/icon_grid.png";
-import icon_adobe from "../../assets/dashboard/icon_adobe.png";
-import icon_arrow_up from "../../assets/dashboard/icon_arrow_up.png";
-import icon_log_out from "../../assets/dashboard/icon_log_out.png";
-import icon_user from "../../assets/dashboard/icon_user.png";
-import icon_plus from "../../assets/dashboard/icon_plus.png";
-import icon_netflix from "../../assets/dashboard/icon_netflix.png";
-import icon_samuel from "../../assets/dashboard/icon_samuel.png";
-import icon_christine from "../../assets/dashboard/icon_christine.png";
 import icon_arrow_blue from "../../assets/dashboard/icon_arrow_blue.png";
-import icon_plus_blue from "../../assets/dashboard/icon_plus_blue.png";
 import icon_arrow_green from "../../assets/dashboard/icon_arrow_green.png";
 import icon_arrow_red from "../../assets/dashboard/icon_arrow_red.png";
 import { useRouter } from "next/router";
