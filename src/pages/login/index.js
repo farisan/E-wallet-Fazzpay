@@ -71,7 +71,6 @@ function Login() {
         setInput_(false),
         setInputpending_(false),
         setButton(false),
-        setButton(true),
         toast.error("Data cannot be empty")
       );
     axios

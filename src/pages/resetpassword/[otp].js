@@ -68,6 +68,12 @@ function Reset() {
                 setInputpending(false),
                 toast.error("Data cannot be empty")
             )
+        if (password !== confirm)
+            return (
+                setInput(false),
+                setInputpending(false),
+                toast.error("password must be same")
+            );
         axios.patch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/reset-password`, {
             keysChangePassword: parseInt(router.query.otp),
             newPassword: password,

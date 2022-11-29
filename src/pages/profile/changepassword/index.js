@@ -28,6 +28,7 @@ function Changepassword() {
   const [inputpending_, setInputpending_] = useState(true);
   const [input__, setInput__] = useState(true);
   const [inputpending__, setInputpending__] = useState(true);
+  const [button, setButton] = useState(true)
 
   // handleToggle1 => Show Password
   const handleToggle1 = () => {
@@ -64,6 +65,7 @@ function Changepassword() {
       setInput(true),
       setIcon("fa-solid fa-eye-slash"),
       setType("password"),
+      setButton(false),
       setPassword(e.target.value);
   };
 
@@ -72,6 +74,7 @@ function Changepassword() {
       setInput_(true),
       setIcon_("fa-solid fa-eye-slash"),
       setType_("password"),
+      setButton(false),
       setConfirm(e.target.value);
   };
 
@@ -80,6 +83,7 @@ function Changepassword() {
       setInput__(true),
       setIcon__("fa-solid fa-eye-slash"),
       setType__("password"),
+      setButton(false),
       setRepeat(e.target.value);
   };
 
@@ -96,8 +100,20 @@ function Changepassword() {
         setInputpending_(false),
         setInput__(false),
         setInputpending__(false),
+        setButton(true),
         toast.error("Input must be field")
       )
+    if (confirm !== repeat)
+      return (
+        setInput(true),
+        setInputpending(false),
+        setInput_(false),
+        setInputpending_(false),
+        setInput__(false),
+        setInputpending__(false),
+        setButton(true),
+        toast.error("New password not same")
+      );
     axios
       .patch(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/user/password/${id}`,
@@ -128,10 +144,11 @@ function Changepassword() {
         (err) => (
           setInput(false),
           setInputpending(false),
-          setInput_(false),
+          setInput_(true),
           setInputpending_(false),
-          setInput__(false),
+          setInput__(true),
           setInputpending__(false),
+          setButton(true),
           toast.error(err.response.data.msg)
         )
       );
@@ -208,7 +225,7 @@ function Changepassword() {
                   <i className={icon__} onClick={handleToggle3}></i>
                 </div>
               </div>
-              <div className={css.button_change_password}>
+              <div className={(button) ? css.button_change_password_grey : css.button_change_password}>
                 <button onClick={clickHandler}>Change Password</button>
               </div>
             </div>
