@@ -56,7 +56,7 @@ function Index() {
       <div className={`container-fluid ${styles.background_container}`}>
         <div className={`container d-flex gap-4 ${styles.content_inti}`}>
           <section className="col-sm-12 col-md-3 d-none d-sm-none d-lg-block ">
-            <Sidebar page="home" />
+            <Sidebar page="home child" />
           </section>
           <div
             className={`px-0 col-lg-9 col-md-12 col-sm-12 mx-auto ${styles.content_right}`}
@@ -80,7 +80,12 @@ function Index() {
               {/* modal history */}
               <div className={styles.history__modal}>
                 {(totaldata <= 0)
-                  ? (<h1>data not found</h1>)
+                  ? (
+                    <div className="d-flex w-100 justift-content-center">
+                      <h5 className="ps-5">data not found</h5>
+                    </div>
+                  )
+
                   : data.map((user) => (
                     <CardTransaction
                       key={user.id}
