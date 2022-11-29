@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 //import components
 import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+import Footer from "../../components/footer/Footer";
 import Sidebar from "../../components/sidebar/Sidebar";
-import CardTransaction from "../../components/CardTransaction/index";
+import CardTransaction from "../../components/CardTransaction/Cardtransaction";
 import styles from "../../styles/History.module.css";
 // import component 👇
 import Drawers from "../../components/drawer/Drawer";

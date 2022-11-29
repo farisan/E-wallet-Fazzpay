@@ -7,7 +7,7 @@ import styles from "../../styles/Rumah.module.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Sidebar from "../../components/sidebar/Sidebar";
-import CardTransaction from "../../components/CardTransaction/Index";
+import CardTransaction from "../../components/CardTransaction/Cardtransaction";
 
 //import image
 import Image from "next/image";
