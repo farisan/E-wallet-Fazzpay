@@ -594,10 +594,11 @@
 
   .border-tf {
     background: #eaedff;
-    width: 100%;
+    /* width: 100%; */
     height: 62px;
     cursor: pointer;
     padding-top: 20px;
+    margin-right: 20px;
   }
 
   .text-transfer {
