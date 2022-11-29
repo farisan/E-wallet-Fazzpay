@@ -21,6 +21,7 @@ import Cookies from "js-cookie";
 import Drawers from "../../components/drawer/Drawer";
 import axios from "axios";
 import Link from "next/link";
+import { toast } from "react-toastify";
 function Index() {
    const router = useRouter();
    const dispatch = useDispatch();
@@ -110,7 +111,7 @@ function Index() {
                setShow(false);
             }, 7000)
          )
-         .catch((err) => console.log(err));
+         .catch((err) => toast.error(err.response.data.msg));
    };
 
    const rupiah = (number) => {

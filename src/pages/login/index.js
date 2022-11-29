@@ -35,6 +35,7 @@ function Login() {
   const [inputpending, setInputpending] = useState(true);
   const [input_, setInput_] = useState(true);
   const [inputpending_, setInputpending_] = useState(true);
+  const [button, setButton] = useState(true)
 
   // handleToggle => Show Password
   const handleToggle = () => {
@@ -51,12 +52,14 @@ function Login() {
   const valueEmail = (e) => {
     setInputpending(false),
       setInput(true),
+      setButton(false),
       setEmail(e.target.value)
   }
 
   const valuePassword = (e) => {
     setInputpending_(false),
       setInput_(true),
+      setButton(false),
       setPass(e.target.value)
   }
 
@@ -67,6 +70,8 @@ function Login() {
         setInputpending(false),
         setInput_(false),
         setInputpending_(false),
+        setButton(false),
+        setButton(true),
         toast.error("Data cannot be empty")
       );
     axios
@@ -97,6 +102,7 @@ function Login() {
           setInputpending(false),
           setInput_(false),
           setInputpending_(false),
+          setButton(true),
           toast.error(err.response.data.msg)
         )
       );
@@ -160,13 +166,13 @@ function Login() {
                 <p>Forgot Password?</p>
               </Link>
             </div>
-            <button className={css.login} onClick={postLogin}>
+            <button className={(button) ? css.login : css.login_blue} onClick={postLogin}>
               Login
             </button>
             <div className={css.signup}>
               <p>
                 Don`t have an account? Let`s
-                <Link href="/register">Sign Up</Link>
+                <Link href="/register"> Sign Up</Link>
               </p>
             </div>
           </div>

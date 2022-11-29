@@ -41,38 +41,35 @@ function Register() {
     const [inputpending__, setInputpending__] = useState(true)
     const [inputemail, setInputemail] = useState(true)
     const [inputpendingemail, setInputpendingemail] = useState(true)
+    const [button, setButton] = useState(true)
 
 
-
-    // changeHandler => ambil data inputan
-    // const changeHandler = (e) => (
-
-    //     setInputpendingemail(false),
-    //     setInputemail(true),
-    //     setBody({ ...body, [e.target.name]: e.target.value })
-    // )
 
     const valueFirstname = (e) => {
         setInputpending(false),
             setInput(true),
+            setButton(false),
             setFirstname(e.target.value)
     }
 
     const valueLastname = (e) => {
         setInputpending_(false),
             setInput_(true),
+            setButton(false),
             setLastname(e.target.value)
     }
 
     const valuePassword = (e) => {
         setInputpending__(false),
             setInput__(true),
+            setButton(false),
             setPassword(e.target.value)
     }
 
     const valueEmail = (e) => {
         setInputemail(true),
             setInputpendingemail(false),
+            setButton(false),
             setEmail(e.target.value)
     }
 
@@ -90,6 +87,7 @@ function Register() {
                 setInputpending__(false),
                 setInputemail(false),
                 setInputpendingemail(false),
+                setButton(true),
                 toast.error("Data cannot be empty")
             )
         return dispacth(
@@ -116,7 +114,8 @@ function Register() {
                     setInput_(true),
                     setInputpending_(true),
                     setInput__(true),
-                    setInputpending__(true)
+                    setInputpending__(true),
+                    setButton(true)
                 )
             )
         );
@@ -191,7 +190,7 @@ function Register() {
                                 placeholder='Enter your password' />
                             <i className={icon} onClick={handleToggle}></i>
                         </div>
-                        <button className={css.login} onClick={postRegister}>Sign Up</button>
+                        <button className={(button) ? css.login : css.login_blue} onClick={postRegister}>Sign Up</button>
                         <div className={css.signup}>
                             <p>Already have an account? Let`s <Link href="/login">Login</Link></p>
                         </div>

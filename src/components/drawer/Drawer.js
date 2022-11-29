@@ -25,7 +25,6 @@ function Drawer({ pages }) {
                 onClose={toggleDrawer}
                 direction="left"
                 className=""
-                overlayColor={"blue"}
                 size={250}
                 enableOverlay={true}
             >
